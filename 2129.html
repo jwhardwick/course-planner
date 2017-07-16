@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang='eng' xml:lang='eng' xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <script type="text/javascript">
+        window.NREUM || (NREUM = {});
+        NREUM.info = {
+            "beacon": "bam.nr-data.net",
+            "errorBeacon": "bam.nr-data.net",
+            "licenseKey": "d306dc230a",
+            "applicationID": "4356895",
+            "transactionName": "dQ5WQ0pdX11REBpHD18VS2hXVGxCQBdRS05FCVdA",
+            "queueTime": 0,
+            "applicationTime": 549,
+            "agent": ""
+        }
+    </script>
+    <script type="text/javascript">
+        window.NREUM || (NREUM = {}), __nr_require = function(e, n, t) {
+            function r(t) {
+                if (!n[t]) {
+                    var o = n[t] = {
+                        exports: {}
+                    };
+                    e[t][0].call(o.exports, function(n) {
+                        var o = e[t][1][n];
+                        return r(o || n)
+                    }, o, o.exports)
+                }
+                return n[t].exports
+            }
+            if ("function" == typeof __nr_require) return __nr_require;
+            for (var o = 0; o < t.length; o++) r(t[o]);
+            return r
+        }({
+            1: [function(e, n, t) {
+                function r() {}
+
+                function o(e, n, t) {
+                    return function() {
+                        return i(e, [c.now()].concat(u(arguments)), n ? null : this, t), n ? void 0 : this
+                    }
+                }
+                var i = e("handle"),
+                    a = e(2),
+                    u = e(3),
+                    f = e("ee").get("tracer"),
+                    c = e("loader"),
+                    s = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = s);
+                var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+                    d = "api-",
+                    l = d + "ixn-";
+                a(p, function(e, n) {
+                    s[n] = o(d + n, !0, "api")
+                }), s.addPageAction = o(d + "addPageAction", !0), s.setCurrentRouteName = o(d + "routeName", !0), n.exports = newrelic, s.interaction = function() {
+                    return (new r).get()
+                };
+                var m = r.prototype = {
+                    createTracer: function(e, n) {
+                        var t = {},
+                            r = this,
+                            o = "function" == typeof n;
+                        return i(l + "tracer", [c.now(), e, t], r),
+                            function() {
+                                if (f.emit((o ? "" : "no-") + "fn-start", [c.now(), r, o], t), o) try {
+                                    return n.apply(this, arguments)
+                                } finally {
+                                    f.emit("fn-end", [c.now()], t)
+                                }
+                            }
+                    }
+                };
+                a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(e, n) {
+                    m[n] = o(l + n)
+                }), newrelic.noticeError = function(e) {
+                    "string" == typeof e && (e = new Error(e)), i("err", [e, c.now()])
+                }
+            }, {}],
+            2: [function(e, n, t) {
+                function r(e, n) {
+                    var t = [],
+                        r = "",
+                        i = 0;
+                    for (r in e) o.call(e, r) && (t[i] = n(r, e[r]), i += 1);
+                    return t
+                }
+                var o = Object.prototype.hasOwnProperty;
+                n.exports = r
+            }, {}],
+            3: [function(e, n, t) {
+                function r(e, n, t) {
+                    n || (n = 0), "undefined" == typeof t && (t = e ? e.length : 0);
+                    for (var r = -1, o = t - n || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = e[n + r];
+                    return i
+                }
+                n.exports = r
+            }, {}],
+            4: [function(e, n, t) {
+                n.exports = {
+                    exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+                }
+            }, {}],
+            ee: [function(e, n, t) {
+                function r() {}
+
+                function o(e) {
+                    function n(e) {
+                        return e && e instanceof r ? e : e ? f(e, u, i) : i()
+                    }
+
+                    function t(t, r, o, i) {
+                        if (!d.aborted || i) {
+                            e && e(t, r, o);
+                            for (var a = n(o), u = m(t), f = u.length, c = 0; c < f; c++) u[c].apply(a, r);
+                            var p = s[y[t]];
+                            return p && p.push([b, t, r, a]), a
+                        }
+                    }
+
+                    function l(e, n) {
+                        v[e] = m(e).concat(n)
+                    }
+
+                    function m(e) {
+                        return v[e] || []
+                    }
+
+                    function w(e) {
+                        return p[e] = p[e] || o(t)
+                    }
+
+                    function g(e, n) {
+                        c(e, function(e, t) {
+                            n = n || "feature", y[t] = n, n in s || (s[n] = [])
+                        })
+                    }
+                    var v = {},
+                        y = {},
+                        b = {
+                            on: l,
+                            emit: t,
+                            get: w,
+                            listeners: m,
+                            context: n,
+                            buffer: g,
+                            abort: a,
+                            aborted: !1
+                        };
+                    return b
+                }
+
+                function i() {
+                    return new r
+                }
+
+                function a() {
+                    (s.api || s.feature) && (d.aborted = !0, s = d.backlog = {})
+                }
+                var u = "nr@context",
+                    f = e("gos"),
+                    c = e(2),
+                    s = {},
+                    p = {},
+                    d = n.exports = o();
+                d.backlog = s
+            }, {}],
+            gos: [function(e, n, t) {
+                function r(e, n, t) {
+                    if (o.call(e, n)) return e[n];
+                    var r = t();
+                    if (Object.defineProperty && Object.keys) try {
+                        return Object.defineProperty(e, n, {
+                            value: r,
+                            writable: !0,
+                            enumerable: !1
+                        }), r
+                    } catch (i) {}
+                    return e[n] = r, r
+                }
+                var o = Object.prototype.hasOwnProperty;
+                n.exports = r
+            }, {}],
+            handle: [function(e, n, t) {
+                function r(e, n, t, r) {
+                    o.buffer([e], r), o.emit(e, n, t)
+                }
+                var o = e("ee").get("handle");
+                n.exports = r, r.ee = o
+            }, {}],
+            id: [function(e, n, t) {
+                function r(e) {
+                    var n = typeof e;
+                    return !e || "object" !== n && "function" !== n ? -1 : e === window ? 0 : a(e, i, function() {
+                        return o++
+                    })
+                }
+                var o = 1,
+                    i = "nr@id",
+                    a = e("gos");
+                n.exports = r
+            }, {}],
+            loader: [function(e, n, t) {
+                function r() {
+                    if (!x++) {
+                        var e = h.info = NREUM.info,
+                            n = d.getElementsByTagName("script")[0];
+                        if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && n)) return s.abort();
+                        c(y, function(n, t) {
+                            e[n] || (e[n] = t)
+                        }), f("mark", ["onload", a() + h.offset], null, "api");
+                        var t = d.createElement("script");
+                        t.src = "https://" + e.agent, n.parentNode.insertBefore(t, n)
+                    }
+                }
+
+                function o() {
+                    "complete" === d.readyState && i()
+                }
+
+                function i() {
+                    f("mark", ["domContent", a() + h.offset], null, "api")
+                }
+
+                function a() {
+                    return E.exists && performance.now ? Math.round(performance.now()) : (u = Math.max((new Date).getTime(), u)) - h.offset
+                }
+                var u = (new Date).getTime(),
+                    f = e("handle"),
+                    c = e(2),
+                    s = e("ee"),
+                    p = window,
+                    d = p.document,
+                    l = "addEventListener",
+                    m = "attachEvent",
+                    w = p.XMLHttpRequest,
+                    g = w && w.prototype;
+                NREUM.o = {
+                    ST: setTimeout,
+                    SI: p.setImmediate,
+                    CT: clearTimeout,
+                    XHR: w,
+                    REQ: p.Request,
+                    EV: p.Event,
+                    PR: p.Promise,
+                    MO: p.MutationObserver
+                };
+                var v = "" + location,
+                    y = {
+                        beacon: "bam.nr-data.net",
+                        errorBeacon: "bam.nr-data.net",
+                        agent: "js-agent.newrelic.com/nr-1044.min.js"
+                    },
+                    b = w && g && g[l] && !/CriOS/.test(navigator.userAgent),
+                    h = n.exports = {
+                        offset: u,
+                        now: a,
+                        origin: v,
+                        features: {},
+                        xhrWrappable: b
+                    };
+                e(1), d[l] ? (d[l]("DOMContentLoaded", i, !1), p[l]("load", r, !1)) : (d[m]("onreadystatechange", o), p[m]("onload", r)), f("mark", ["firstbyte", u], null, "api");
+                var x = 0,
+                    E = e(4)
+            }, {}]
+        }, {}, ["loader"]);
+    </script>
+    <title>
+        Operating Systems and Machine Principles (COMP2129) - Courses - The University of Sydney
+
+    </title>
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="OHxqtG+yru0rr9XC8X2Noo2L5NDdyVsiFNzkY65rAsY=" name="csrf-token" />
+    <link href="/courses/assets/usyd/branding/print-fc88dd15180b88f3f63e8dadc55cc54a.css" media="print" rel="stylesheet" />
+    <!--[if IE]>
+<link href="/courses/stylesheets/usyd/branding/screen-ie.css" media="screen" rel="stylesheet" />
+<![endif]-->
+    <!--[if IE6]>
+<link href="/courses/stylesheets/usyd/branding/screen-ie6.css" media="screen" rel="stylesheet" />
+<![endif]-->
+    <link href="/courses/assets/application-a8558d77098f81d6534c816eb4d07180.css" media="screen" rel="stylesheet" />
+    <link href="/courses/assets/usyd/branding/application-a816d30acbd6cd9724a17d73b2d656d5.css" media="screen" rel="stylesheet" />
+    <script src="/courses/assets/usyd/branding/application-7e15b9b74bbc171e8c9ef644530ffa5b.js"></script>
+    <script src="/courses/assets/application-9d437ce4c4dfc63f29e0b7b2e5deb3bf.js"></script>
+</head>
+
+<body class='course-essentials' data-no-turbolink>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TGDVXZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TGDVXZ');
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+    <!--Begin Adobe DTM header -->
+    <script src="//assets.adobedtm.com/9647bfac8ca421edecda0f0bc63109ad0977d9ca/satelliteLib-1c2d79f446c51f0f332c118ae7463c71d9ee08fe.js"></script>
+    <!--End Adobe DTM header -->
+
+
+    <div class='topheader' id='topheader'>
+        <div class='topheader' id='topheader'>
+            <ul>
+                <li>
+                    <a href='http://www.library.usyd.edu.au/' title='Library'>Library</a>
+                </li>
+                <li>
+                    <a href='https://myuni.sydney.edu.au/' title='My Uni'>My Uni</a>
+                </li>
+                <li>
+                    <a href='http://intranet.sydney.edu.au' title='Staff Intranet'>Staff Intranet</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id='w1'>
+        <div id='w2'>
+            <div id='w3'>
+                <div id='head'>
+                    <div id='masthead'>
+                        <a class='skip-nav' href='#content'>Skip to main content</a>
+                        <h1>
+<a data-no-turbolink href='http://sydney.edu.au/' id='logo'>The University of Sydney</a>
+<span id='separator'>-</span>
+<span id='tag-line'>
+Find a course
+</span>
+</h1>
+                    </div>
+                    <ul id='nav-global'>
+                        <!-- use the "active" class to define the currently active item (highlighted text and nav indicator) -->
+                        <li class='active'>
+                            <a data-no-turbolink href='/courses/'>Course search</a>
+                        </li>
+                        <li>
+                            <a data-no-turbolink href='http://sydney.edu.au/study'>Study</a>
+                        </li>
+                        <li>
+                            <a data-no-turbolink href='http://sydney.edu.au/'>Home</a>
+                        </li>
+                        <li>
+                            <a data-no-turbolink href='http://sydney.edu.au/library'>Library</a>
+                        </li>
+                        <li>
+                            <a data-no-turbolink href='http://sydney.edu.au/news'>Media</a>
+                        </li>
+                        <li>
+                            <a data-no-turbolink href='http://sydney.edu.au/contact.shtml'>Contact</a>
+                        </li>
+                        <li>
+                            <a data-no-turbolink href='http://sydney.edu.au/study/find-a-course/undergraduate-courses/dalyell-scholars.html'>Dalyell</a>
+                        </li>
+                        <li>
+                            <a data-no-turbolink href='http://sydney.edu.au/study/find-a-course/undergraduate-courses/sydney-undergraduate-experience.html'>Sydney Experience</a>
+                        </li>
+                    </ul>
+
+
+                    <!-- start global nav -->
+                    <form action='https://search.usyd.edu.au/search/search.cgi' class='built' id='search'>
+                        <div id='search-scope-button'>
+                            <!-- #search-scope-select.hide_text Refine Search -->
+                            <input class='field' name='query' title='All University websites' type='text' value='All University websites'>
+                        </div>
+                        <input name='collection' type='hidden' value='Usyd'>
+                        <input class='button' type='submit' value='Go'>
+                        <input name='scope' type='hidden' value=''>
+                    </form>
+                    <!-- end global nav -->
+                </div>
+
+                <div id='tabunderscore'></div>
+                <div class='breadcrumb moved'>
+                    <span class='prefix'>You are here:</span>
+                    <a href='http://sydney.edu.au/'>Home</a> /
+                    <a href='http://sydney.edu.au/future_students/'>Future students</a> /
+                    <a href='/courses/'>Course search</a>
+                    <!-- Check to see if we are in the content pages -->
+                </div>
+
+
+                <!-- start mid -->
+                <div class='clearfix' id='mid'>
+
+
+                    <div id='sidebar'>
+                        <div class='feature noborder' id='essentials'>
+                            <h3>Essentials</h3>
+                            <ul id='tab-tabs'>
+                                <li class='selected'>
+                                    <a href='#'>Domestic students</a>
+                                </li>
+                                <li>
+                                    <a href='#'>International students</a>
+                                </li>
+                            </ul>
+                            <!-- domestic feature pane -->
+                            <div class='tabs'>
+                                <div class='tab-content'>
+                                    <p>
+                                        <strong>Commonwealth Supported Place (CSP) fee:</strong>
+                                        <span>$1,131</span>
+                                    </p>
+                                    <p>
+                                        <strong>Domestic tuition fee:</strong>
+                                        <span>Please refer to the course you wish to undertake and multiply the course fee per EFTSL by the EFTSL value for this unit of study shown below.</span>
+                                    </p>
+                                    <p>
+                                        <strong>HECS Band:</strong>
+                                        <span>2</span>
+                                    </p>
+                                    <p>
+                                        <strong>Unit of Study Costs:</strong>
+                                        <a href="http://sydney.edu.au/future-students/domestic/undergraduate/costs/" target="_blank">Unit of Study Costs</a>
+                                    </p>
+                                    <div class='hr'></div>
+                                    <p>
+                                        <strong>Credit points:</strong>
+                                        <span>6</span>
+                                    </p>
+                                    <p>
+                                        <strong title='The equivalent full-time student load (EFTSL) for a year. It represents the annual&#x000A;study load of a student undertaking a particular course of study on a full-time basis.'>EFTSL:</strong>
+                                        <span>0.125</span>
+                                    </p>
+                                    <p>
+                                        <strong title='Units of study are divided into junior, intermediate, senior, honours, Year 5 and Year 6. Junior units of study usually act as prerequisites for intermediate and senior units of study. Most majors consist of 32 senior credit points in a subject area.'>Unit of study level:</strong>
+                                        <span>Intermediate</span>
+                                    </p>
+                                    <div class='hr'></div>
+                                    <p>
+                                        <strong>Commencing semesters:</strong>
+                                        <span>Semester 1 (March)</span>
+                                    </p>
+                                    <p>
+                                        <strong title='<b>On-campus day</b> and <b>on-campus evening</b> is conducted during normal day hours or the early evening; <b>intensive</b> classes involve longer hours during a shorter period of study; <b>online</b> is available via the web; <b>distance</b> study is conducted remotely;  <b>professional practice</b> includes a placement in a professional setting; <b>clinical experience</b> is offered in a clinical setting relevant to the course; <b>field experience</b> is employment in a field directly related to the course.'>Study mode:</strong>
+                                        <span>On-campus day classes</span>
+                                    </p>
+                                    <p>
+                                        <strong title='A unit of study available to international students enrolled on a Study Abroad or Exchange program.'>Available for study abroad and exchange:</strong>
+                                        <span>
+Yes. Overseas students who want to study at Sydney may apply
+<a href="http://sydney.edu.au/future-students/study-abroad-exchange/admission/application.shtml" target="_blank">here</a>.
+</span>
+                                    </p>
+                                    <div class='hr'></div>
+                                    <p>
+                                        <strong>Census dates:</strong>
+                                        <a href="http://web.timetable.usyd.edu.au/censusDates.jsp?academicYear=2017" target="_blank">Census dates</a>
+                                    </p>
+                                    <p>
+                                        <strong>Faculty:</strong>
+                                        <a href="http://sydney.edu.au/engineering">Faculty of Engineering and Information Technologies</a>
+                                    </p>
+                                    <p>
+                                        <strong>Department:</strong>
+                                        <span>Information Technologies</span>
+                                    </p>
+                                    <p>
+                                    </p>
+                                </div>
+                                <!-- international feature pane -->
+                                <div class='tab-content hide'>
+                                    <p>
+                                        <strong>International tuition fee:</strong>
+                                        <span>Please refer to the course you wish to undertake and multiply the course fee per EFTSL by the EFTSL value for this unit of study shown below.</span>
+                                    </p>
+                                    <p>
+                                        <strong>Unit of Study Costs:</strong>
+                                        <a href="http://sydney.edu.au/future-students/domestic/undergraduate/costs/" target="_blank">Unit of Study Costs</a>
+                                    </p>
+                                    <div class='hr'></div>
+                                    <p>
+                                        <strong>Credit points:</strong>
+                                        <span>6</span>
+                                    </p>
+                                    <p>
+                                        <strong title='The equivalent full-time student load (EFTSL) for a year. It represents the annual&#x000A;study load of a student undertaking a particular course of study on a full-time basis.'>EFTSL:</strong>
+                                        <span>0.125</span>
+                                    </p>
+                                    <p>
+                                        <strong title='Units of study are divided into junior, intermediate, senior, honours, Year 5 and Year 6. Junior units of study usually act as prerequisites for intermediate and senior units of study. Most majors consist of 32 senior credit points in a subject area.'>Unit of study level:</strong>
+                                        <span>Intermediate</span>
+                                    </p>
+                                    <div class='hr'></div>
+                                    <p>
+                                        <strong>Commencing semesters:</strong>
+                                        <span>Semester 1 (March)</span>
+                                    </p>
+                                    <p>
+                                        <strong title='<b>On-campus day</b> and <b>on-campus evening</b> is conducted during normal day hours or the early evening; <b>intensive</b> classes involve longer hours during a shorter period of study; <b>online</b> is available via the web; <b>distance</b> study is conducted remotely;  <b>professional practice</b> includes a placement in a professional setting; <b>clinical experience</b> is offered in a clinical setting relevant to the course; <b>field experience</b> is employment in a field directly related to the course.'>Study mode:</strong>
+                                        <span>On-campus day classes</span>
+                                    </p>
+                                    <p>
+                                        <strong title='A unit of study available to international students enrolled on a Study Abroad or Exchange program.'>Available for study abroad and exchange:</strong>
+                                        <span>
+Yes. Overseas students who want to study at Sydney may apply
+<a href="http://sydney.edu.au/future-students/study-abroad-exchange/admission/application.shtml" target="_blank">here</a>.
+</span>
+                                    </p>
+                                    <div class='hr'></div>
+                                    <p>
+                                        <strong>Census dates:</strong>
+                                        <a href="http://web.timetable.usyd.edu.au/censusDates.jsp?academicYear=2017" target="_blank">Census dates</a>
+                                    </p>
+                                    <p>
+                                        <strong>Faculty:</strong>
+                                        <a href="http://sydney.edu.au/engineering">Faculty of Engineering and Information Technologies</a>
+                                    </p>
+                                    <p>
+                                        <strong>Department:</strong>
+                                        <span>Information Technologies</span>
+                                    </p>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class='nomenu' id='content'>
+
+
+                        <div id='w4'>
+                            <h1>Operating Systems and Machine Principles (COMP2129)</h1>
+                            <h2 class='subtitle'>UNIT OF STUDY</h2>
+                            <p>
+                                In this unit of study, elementary methods for developing robust, efficient, and re-usable software will be covered. The unit is taught in C, in a Unix environment. Specific coding topics include memory management, the pragmatic aspects of implementing
+                                data structures such as lists and hash tables and managing concurrent threads. Debugging tools and techniques are discussed and common programming errors are considered along with defensive programming techniques to avoid
+                                such errors. Emphasis is placed on using common Unix tools to manage aspects of the software construction process, such as version control and regression testing. The subject is taught from a practical viewpoint and it
+                                includes a considerable amount of programming practice.
+                            </p>
+                            <h2>Our courses that offer this unit of study</h2>
+                            <div class='block majors'>
+                                <ul>
+                                    <li><a href="/courses/bachelor-of-arts">Bachelor of Arts</a></li>
+                                    <li><a href="/courses/bachelor-of-arts-dual-degree-sciences-po-france">Bachelor of Arts (Dual Degree, Sciences Po, France)</a></li>
+                                    <li><a href="/courses/bachelor-of-arts-media-and-communications">Bachelor of Arts (Media and Communications)</a></li>
+                                    <li><a href="/courses/bachelor-of-arts-media-and-communications-and-bachelor-of-laws">Bachelor of Arts (Media and Communications) and Bachelor of Laws</a></li>
+                                    <li><a href="/courses/bachelor-of-arts-and-bachelor-of-economics">Bachelor of Arts and Bachelor of Economics</a></li>
+                                    <li><a href="/courses/bachelor-of-arts-and-bachelor-of-laws">Bachelor of Arts and Bachelor of Laws</a></li>
+                                    <li><a href="/courses/bachelor-of-arts-and-bachelor-of-social-work">Bachelor of Arts and Bachelor of Social Work</a></li>
+                                    <li><a href="/courses/bachelor-of-commerce">Bachelor of Commerce</a></li>
+                                    <li><a href="/courses/bachelor-of-commerce-liberal-studies">Bachelor of Commerce (Liberal Studies)</a></li>
+                                    <li><a href="/courses/bachelor-of-commerce-and-bachelor-of-arts">Bachelor of Commerce and Bachelor of Arts</a></li>
+                                    <li><a href="/courses/bachelor-of-commerce-and-bachelor-of-science">Bachelor of Commerce and Bachelor of Science</a></li>
+                                    <li><a href="/courses/bachelor-of-computer-science-and-technology">Bachelor of Computer Science and Technology</a></li>
+                                    <li><a href="/courses/bachelor-of-computer-science-and-technology-advanced">Bachelor of Computer Science and Technology (Advanced)</a></li>
+                                    <li><a href="/courses/bachelor-of-design-computing">Bachelor of Design Computing</a></li>
+                                    <li><a href="/courses/bachelor-of-economics">Bachelor of Economics</a></li>
+                                    <li><a href="/courses/bachelor-of-economics-dual-degree-sciences-po-france">Bachelor of Economics (Dual Degree, Sciences Po, France)</a></li>
+                                    <li><a href="/courses/bachelor-of-economics-and-bachelor-of-laws">Bachelor of Economics and Bachelor of Laws</a></li>
+                                    <li><a href="/courses/bachelor-of-education-health-and-physical-education">Bachelor of Education (Health and Physical Education)</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-aeronautical">Bachelor of Engineering Honours (Aeronautical)</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-biomedical">Bachelor of Engineering Honours (Biomedical)</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-chemical-and-biomolecular">Bachelor of Engineering Honours (Chemical and Biomolecular)</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-civil">Bachelor of Engineering Honours (Civil)</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-dalyell-scholars">Bachelor of Engineering Honours (Dalyell Scholars)</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-electrical">Bachelor of Engineering Honours (Electrical)</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-mechanical">Bachelor of Engineering Honours (Mechanical)</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-mechatronic">Bachelor of Engineering Honours (Mechatronic)</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-software">Bachelor of Engineering Honours (Software)</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-and-bachelor-of-arts">Bachelor of Engineering Honours and Bachelor of Arts</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-and-bachelor-of-commerce">Bachelor of Engineering Honours and Bachelor of Commerce</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-and-bachelor-of-laws">Bachelor of Engineering Honours and Bachelor of Laws</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-and-bachelor-of-medical-science">Bachelor of Engineering Honours and Bachelor of Medical Science</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-and-bachelor-of-project-management">Bachelor of Engineering Honours and Bachelor of Project Management</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-and-bachelor-of-science">Bachelor of Engineering Honours and Bachelor of Science</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-with-advanced-engineering">Bachelor of Engineering Honours with Advanced Engineering</a></li>
+                                    <li><a href="/courses/bachelor-of-engineering-honours-with-space-engineering-major">Bachelor of Engineering Honours with Space Engineering Major</a></li>
+                                    <li><a href="/courses/bachelor-of-information-technology">Bachelor of Information Technology</a></li>
+                                    <li><a href="/courses/bachelor-of-information-technology-and-bachelor-of-arts">Bachelor of Information Technology and Bachelor of Arts</a></li>
+                                    <li><a href="/courses/bachelor-of-information-technology-and-bachelor-of-commerce">Bachelor of Information Technology and Bachelor of Commerce</a></li>
+                                    <li><a href="/courses/bachelor-of-information-technology-and-bachelor-of-laws">Bachelor of Information Technology and Bachelor of Laws</a></li>
+                                    <li><a href="/courses/bachelor-of-information-technology-and-bachelor-of-medical-science">Bachelor of Information Technology and Bachelor of Medical Science</a></li>
+                                    <li><a href="/courses/bachelor-of-information-technology-and-bachelor-of-science">Bachelor of Information Technology and Bachelor of Science</a></li>
+                                    <li><a href="/courses/bachelor-of-international-and-global-studies">Bachelor of International and Global Studies</a></li>
+                                    <li><a href="/courses/bachelor-of-international-and-global-studies-and-bachelor-of-laws">Bachelor of International and Global Studies and Bachelor of Laws</a></li>
+                                    <li><a href="/courses/bachelor-of-liberal-arts-and-science">Bachelor of Liberal Arts and Science</a></li>
+                                    <li><a href="/courses/bachelor-of-medical-science">Bachelor of Medical Science</a></li>
+                                    <li><a href="/courses/bachelor-of-political-economic-and-social-sciences">Bachelor of Political, Economic and Social Sciences</a></li>
+                                    <li><a href="/courses/bachelor-of-project-management">Bachelor of Project Management</a></li>
+                                    <li><a href="/courses/bachelor-of-project-management-and-bachelor-of-arts">Bachelor of Project Management and Bachelor of Arts</a></li>
+                                    <li><a href="/courses/bachelor-of-psychology">Bachelor of Psychology</a></li>
+                                    <li><a href="/courses/bachelor-of-science">Bachelor of Science</a></li>
+                                    <li><a href="/courses/bachelor-of-science-advanced-mathematics">Bachelor of Science (Advanced Mathematics)</a></li>
+                                    <li><a href="/courses/bachelor-of-science-advanced">Bachelor of Science (Advanced)</a></li>
+                                    <li><a href="/courses/bachelor-of-science-and-bachelor-of-arts">Bachelor of Science and Bachelor of Arts</a></li>
+                                    <li><a href="/courses/bachelor-of-science-and-bachelor-of-laws">Bachelor of Science and Bachelor of Laws</a></li>
+                                    <li><a href="/courses/bachelor-of-social-work">Bachelor of Social Work</a></li>
+                                </ul>
+                            </div>
+                            <h2>Further unit of study information</h2>
+                            <div class='block majors'>
+                                <p></p>
+                                <h3 class='subtitle'>Classes</h3>
+                                <p>Lectures, Laboratories</p>
+                                <h3 class='subtitle'>Assessment</h3>
+                                <p>Through semester assessment (60%) and Final Exam (40%)</p>
+                                <h3 class='subtitle'>Faculty/department permission required?</h3>
+                                <p>No</p>
+                            </div>
+                            <h2>Unit of study rules</h2>
+                            <div class='block majors'>
+                                <h3 class='subtitle'>Prerequisites</h3>
+                                <p>INFO1103 or INFO1903.</p>
+                                <h3 class='subtitle'>Assumed knowledge</h3>
+                                <p>INFO1105 OR INFO1905.</p>
+                            </div>
+                            <h2>Study this unit outside a degree</h2>
+                            <div class='block majors'>
+                                <h3 class='subtitle'>Non-award/non-degree study</h3>
+                                <p>If you wish to undertake one or more units of study (subjects) for your own interest but not towards a degree, you may enrol in single units as a non-award student.</p>
+
+                                <h3 class='subtitle'>Cross-institutional study</h3>
+                                <p>If you are from another Australian tertiary institution you may be permitted to underake cross-institutional study in one or more units of study at the University of Sydney.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end content -->
+                </div>
+                <!-- end mid -->
+                <!--Begin Adobe DTM header -->
+                <script type="text/javascript">
+                    _satellite.pageBottom();
+                </script>
+                <!--End Adobe DTM footer -->
+
+                <div class='clearfix' id='foot'>
+                    <div id='legal'>
+                        <p>
+                            &copy; 2002-17 The University of Sydney.
+                            <strong>Last updated:</strong> 15 July 2017
+                        </p>
+                        <p>
+                            <strong>ABN:</strong> 15 211 513 464.
+                            <strong>CRICOS number:</strong> 00026A.
+                            <strong>Phone:</strong> +61 2 9351 2222
+                        </p>
+                        <p>
+                            <strong>Authorised by:</strong> Director, Student Recruitment
+                        </p>
+                        <p id='foot-links'>
+                            <a href="http://sydney.edu.au/contact.shtml">Contact the University</a> |
+                            <a href="http://sydney.edu.au/disclaimer.shtml">Disclaimer</a> |
+                            <a href="http://sydney.edu.au/privacy.shtml">Privacy</a> |
+                            <a href="http://sydney.edu.au/accessibility.shtml">Accessibility</a> |
+                            <a href="http://sydney.edu.au/feedback.php">Feedback</a>
+                        </p>
+
+                    </div>
+                    <div id='disclaimer'>
+                        <h2>Usage disclaimer</h2>
+                        <p>
+                            The course information on this website applies only to
+                            <b>future</b> students.
+                            <b>Current</b> students should refer to <a href="http://sydney.edu.au/handbooks/">faculty handbooks</a> for current or past course information.
+                        </p>
+                        <h2 class='print-only'>Print disclaimer</h2>
+                        <p class='print-only'>
+                            The information provided here was as accurate as possible at the time of printing. The University reserves the right to make changes to the information as appropriate. Future students must ensure to check online at http://sydney.edu.au/courses for the
+                            most up to date course information.
+                        </p>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script id="f5_cspm">
+    (function() {
+        var f5_cspm = {
+            f5_p: 'FLFPPKCFEBICLHKOHIKGGPOGKAKNFGNIFKHNABBNJCFBCNEMAFPMFOIGBIJACIJIAAJIOPHKIFFLAAJFAAPJCNJIAIJJMHCMLADMGEKDHFGJCKNPMCJHABODJMOLFHDH',
+            setCharAt: function(str, index, chr) {
+                if (index > str.length - 1) return str;
+                return str.substr(0, index) + chr + str.substr(index + 1);
+            },
+            get_byte: function(str, i) {
+                var s = (i / 16) | 0;
+                i = (i & 15);
+                s = s * 32;
+                return ((str.charCodeAt(i + 16 + s) - 65) << 4) | (str.charCodeAt(i + s) - 65);
+            },
+            set_byte: function(str, i, b) {
+                var s = (i / 16) | 0;
+                i = (i & 15);
+                s = s * 32;
+                str = f5_cspm.setCharAt(str, (i + 16 + s), String.fromCharCode((b >> 4) + 65));
+                str = f5_cspm.setCharAt(str, (i + s), String.fromCharCode((b & 15) + 65));
+                return str;
+            },
+            set_latency: function(str, latency) {
+                latency = latency & 0xffff;
+                str = f5_cspm.set_byte(str, 32, (latency >> 8));
+                str = f5_cspm.set_byte(str, 33, (latency & 0xff));
+                str = f5_cspm.set_byte(str, 27, 2);
+                return str;
+            },
+            wait_perf_data: function() {
+                try {
+                    var wp = window.performance.timing;
+                    if (wp.loadEventEnd > 0) {
+                        var res = wp.loadEventEnd - wp.navigationStart;
+                        if (res < 60001) {
+                            var cookie_val = f5_cspm.set_latency(f5_cspm.f5_p, res);
+                            window.document.cookie = 'f5avr1398787395aaaaaaaaaaaaaaaa=' + encodeURIComponent(cookie_val) + ';path=/';
+                        }
+                        return;
+                    }
+                } catch (err) {
+                    return;
+                }
+                setTimeout(f5_cspm.wait_perf_data, 100);
+                return;
+            },
+            go: function() {
+                var chunk = window.document.cookie.split(/\s*;\s*/);
+                for (var i = 0; i < chunk.length; ++i) {
+                    var pair = chunk[i].split(/\s*=\s*/);
+                    if (pair[0] == 'f5_cspm' && pair[1] == '1234') {
+                        var d = new Date();
+                        d.setTime(d.getTime() - 1000);
+                        window.document.cookie = 'f5_cspm=;expires=' + d.toUTCString() + ';path=/;';
+                        setTimeout(f5_cspm.wait_perf_data, 100);
+                    }
+                }
+            }
+        }
+        f5_cspm.go();
+    }());
+</script>
