@@ -33,9 +33,6 @@ def database_connect_config_parser():
     return connection
 
 def database_connect():
-    # Read the config file
-
-    conn = pg8000.connect(user=None, host='localhost', unix_sock=None, port=5432, database='studreg', password=None, ssl=False, timeout=None)
 
     # Create a connection to the database
     connection = None
@@ -88,6 +85,10 @@ def parse_db(uoscode):
     except:
         print("HTML unable to be reached for " + uoscode)
         return
+
+
+    # PARSE HTML HERE!
+
 
     try:
         cursor = connection.cursor()

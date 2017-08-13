@@ -1,0 +1,114 @@
+<nav class="panel">
+  <p class="panel-heading">
+    repositories
+  </p>
+  <div class="panel-block">
+    <p class="control has-icons-left">
+      <input class="input is-small" type="text" placeholder="search">
+      <span class="icon is-small is-left">
+        <i class="fa fa-search"></i>
+      </span>
+    </p>
+  </div>
+
+  <a class="panel-block">
+    <span class="panel-icon">
+      <i class="fa fa-book"></i>
+    </span>
+    bulma
+  </a>
+
+  <div class="panel-block">
+    <button class="button is-primary is-outlined is-fullwidth">
+      reset all filters
+    </button>
+  </div>
+</nav>
+
+
+
+<nav class="level">
+
+  <div class="level-left">
+    <div class="level-item">
+
+    </div>
+  </div>
+
+</nav>
+
+
+    <div>
+        <div class="field has-addons">
+            <a class="button is-success is-outlined" @click="addSemester">Add Semester</a>
+
+            <div class="control" v-show="showDropdown" >
+                  <div class="select" >
+                    <select v-model="newSemester.year">
+                      <option>2009</option>
+                      <option>2010</option>
+                      <option>2011</option>
+                      <option>2012</option>
+                      <option>2013</option>
+                      <option>2014</option>
+                      <option>2015</option>
+                      <option>2016</option>
+                      <option>2017</option>
+                      <option>2018</option>
+                      <option>2019</option>
+                    </select>
+                  </div>
+                  <p class="help">Starting year</p>
+              </div>
+
+          </div>
+
+
+          <div class="columns">
+
+            <div class="column is-2" v-for="semester in semesters">
+
+                <nav class="level-left has-addons" >
+
+                  <div class="level">
+                    <div class="level-item">
+
+                      <nav class="panel is-2">
+                        <p class="panel-heading">
+                          {{ semester.year }} S{{ semester.sem }}
+                        </p>
+                        <div class="panel-block">
+                          <p class="control has-icons-left has-addons">
+
+                            <input class="input is-small" type="text" placeholder="Subject code..." v-on:keyup.enter="getCourse(semester.field, semester.year, semester.sem)" v-model="semester.field">
+
+
+
+                          </p>
+                        </div>
+
+
+                        <a class="panel-block" v-for="subject in semester.subjects">
+                          <span class="panel-icon">
+                            {{ subject.Item.code }}
+                          </span>
+                          {{ subject.Item.code }}
+                          </a>
+                      </nav>
+
+                    </div>
+                  </div>
+
+                </nav>
+
+            <div>
+
+          </div>
+
+
+
+
+
+
+
+    </div>
