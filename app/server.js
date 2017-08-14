@@ -70,6 +70,13 @@ app.get('/node_modules/vue/dist/vue.js', (req, res)=> {
     res.sendFile(__dirname + '/node_modules/vue/dist/vue.js')
 })
 
+app.get('/node_modules/axios/dist/axios.js', (req, res)=> {
+    res.sendFile(__dirname + '/node_modules/axios/dist/axios.js')
+})
+
+app.get('/node_modules/font-awesome/dist/icons.less', (req, res)=> {
+    res.sendFile(__dirname + '/node_modules/font-awesome/dist/icons.less')
+})
 
 
 // app.post('/test', (req, res)=> {
