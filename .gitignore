@@ -1,2 +1,7 @@
-config.ini
-modules/
+app/node_modules
+app/.DS_Store
+app/post.sh
+app/scraps.html
+app/server-dynamo.js
+app/server-with-externaldb.js
+
