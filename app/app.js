@@ -187,22 +187,23 @@ Vue.component('semesters', {
               })
               .then(function (response) {
 
-                  console.log("reponse.data")
-                  console.log(response.data);
+                    console.log("reponse.data")
+                    console.log(response.data);
 
+                    if (response.data) {
+                        for (let i = 0; i < vm.semesters.length; i++) {
+                            if (vm.semesters[i].year == year && vm.semesters[i].sem == sem) {
+                                console.log("Match found at: " + i)
+                                console.log("vm.semesters[i]: " + vm.semesters[i] )
+                                vm.semesters[i].subjects.push(response.data)
+                                vm.semesters[i].creditPoints += parseInt(response.data.credit_points)
 
-
-
-                for (let i = 0; i < vm.semesters.length; i++) {
-                    if (vm.semesters[i].year == year && vm.semesters[i].sem == sem) {
-                        console.log("Match found at: " + i)
-                        console.log("vm.semesters[i]: " + vm.semesters[i] )
-                        vm.semesters[i].subjects.push(response.data)
-                        vm.semesters[i].creditPoints += parseInt(response.data.credit_points)
-
-                        Event.fire('addPoints', parseInt(response.data.credit_points))
+                                Event.fire('addPoints', parseInt(response.data.credit_points))
+                            }
+                        }
                     }
-                }
+
+
               })
               .catch(function (error) {
                   console.log(error);
